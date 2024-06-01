@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+<!--Content-->
+{% block content %}
+<div class="container">
+  <div class="row mt-5">
+    <h1 class="text-center text-muted">Category Form</h1>
+    <div class="col-8 mx-auto mt-4">
+      {% load crispy_forms_tags %}
+      <form method="post">
+        {% csrf_token %} {{ categoryForm | crispy }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
